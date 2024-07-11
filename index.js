@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const path = require("path");
 const http = require("http");
+const port = 3500;
 const { connect } = require('http2');
 const { dirname } = require('path');
 const socketio = require("socket.io");
@@ -25,6 +26,8 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-server.listen(3000);
+server.listen(port, () => {
+    console.log("Running!");
+});
 
 module.exports = app;
